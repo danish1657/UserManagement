@@ -1,0 +1,17 @@
+<div>
+  <h2>Roles</h2>
+  <ul>
+    <li *ngFor="let role of roles">
+      {{ role.name }}
+      <button (click)="deleteRole(role.id)">Delete</button>
+      <button (click)="updateRole(role)">Update</button>
+    </li>
+  </ul>
+
+  <h3>Create Role</h3>
+  <form (ngSubmit)="createRole()">
+    <label for="name">Name</label>
+    <input id="name" [(ngModel)]="newRole.name" name="name" required>
+    <button type="submit">Create</button>
+  </form>
+</div>

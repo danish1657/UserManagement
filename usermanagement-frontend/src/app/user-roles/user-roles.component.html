@@ -1,0 +1,32 @@
+<div>
+  <h2>User Roles</h2>
+  <ul>
+    <li *ngFor="let userRole of userRoles">
+      User: {{ userRole.user.name }}, Unit: {{ userRole.unit.name }}, Role: {{ userRole.role.name }},
+      Valid From: {{ userRole.validFrom }}, Valid To: {{ userRole.validTo }}
+      <button (click)="deleteUserRole(userRole.id)">Delete</button>
+      <button (click)="updateUserRole(userRole)">Update</button>
+    </li>
+  </ul>
+
+  <h3>Create User Role</h3>
+  <form (ngSubmit)="createUserRole()">
+    <!-- Add input fields for userRole properties -->
+    <label for="user">User</label>
+    <input id="user" [(ngModel)]="newUserRole.user.name" name="user" required>
+    
+    <label for="unit">Unit</label>
+    <input id="unit" [(ngModel)]="newUserRole.unit.name" name="unit" required>
+    
+    <label for="role">Role</label>
+    <input id="role" [(ngModel)]="newUserRole.role.name" name="role" required>
+    
+    <label for="validFrom">Valid From</label>
+    <input id="validFrom" [(ngModel)]="newUserRole.validFrom" name="validFrom" required>
+    
+    <label for="validTo">Valid To</label>
+    <input id="validTo" [(ngModel)]="newUserRole.validTo" name="validTo" required>
+    
+    <button type="submit">Create</button>
+  </form>
+</div>

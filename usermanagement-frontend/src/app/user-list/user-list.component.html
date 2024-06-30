@@ -1,0 +1,68 @@
+<!-- src/app/user-list/user-list.component.html -->
+				
+
+<div class="container">
+
+
+  <!-- Form to create new user -->
+											   
+						  
+  <form (ngSubmit)="createUser()" class="create-form">
+								
+											
+    <input type="text" placeholder="Name" [(ngModel)]="newUser.name" name="name" required>
+			  
+								
+												  
+																																				 
+			  
+    <button type="submit">Create User</button>
+  </form>
+</div>
+		
+
+<hr>
+
+<div *ngIf="users.length === 0" class="container">
+  <p>No users found.</p>
+</div>
+
+
+
+
+<table class="user-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Unit</th>
+      <th>Roles</th>
+      <th>Update Name</th>
+      <th>Delete User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let user of users">
+      <tr>
+        <!-- User Details -->
+        <td>{{ user.name }}</td>
+        <td>{{ user.unitName }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let role of user.roles">{{ role }}</li>
+          </ul>
+        </td>
+        <!-- Update User -->
+        <td>
+          <form (ngSubmit)="updateUser(user)" class="form">
+            <input type="text" [(ngModel)]="user.name" name="name" required>
+            <button type="submit">Update</button>
+          </form>
+        </td>
+        <!-- Delete User -->
+        <td>
+          <button (click)="deleteUser(user.id)">Delete</button>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
