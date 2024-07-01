@@ -24,6 +24,8 @@ This project provides a set of RESTful APIs for managing users, units, roles, an
   - [Fetch Valid User Roles](#fetch-valid-user-roles)
 - [cURL Commands](#curl-commands)
 
+Swagger Link to the API: http://localhost:8080/swagger-ui.html
+
 ## User Controller
 
 ### Get All Users
