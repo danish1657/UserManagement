@@ -1,6 +1,7 @@
 # User Management API
 
 This project provides a set of RESTful APIs for managing users, units, roles, and user roles. The API is built using Spring Boot and for frontend, angular framework is used to communicate it with APIs and frontend randering.
+![swagger picture](https://github.com/danish1657/UserManagement/assets/64883381/90930f63-2b9b-47e4-8312-e362bcd4d66f)
 
 ## Table of Contents
 - [User Controller](#user-controller)
