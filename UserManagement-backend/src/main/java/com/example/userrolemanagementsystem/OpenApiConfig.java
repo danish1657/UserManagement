@@ -12,7 +12,7 @@ public class OpenApiConfig  {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("User Management")
+                        .title("User Management API")
                         .version("1.0")
                         .description("This is swagger link to the apis required for the assignment related to user management"));
     }
